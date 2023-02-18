@@ -1,0 +1,76 @@
+.registration_container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.detail {
+  width: 40%;
+  background-image: url("../../asset/backgroundImage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.detai_container {
+  width: 100%;
+  height: 100%;
+  background-color: #1566d8d0;
+}
+.detail___info {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 3rem;
+  position: relative;
+}
+
+.detail___info--logo {
+  width: 100px;
+  height: auto;
+}
+
+.detail___info--body {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail___info--bodytext {
+  width: 70%;
+  height: fit-content;
+  position: relative;
+}
+
+.detail___info--bodytext img {
+  width: 80px;
+  height: auto;
+}
+
+.detail___info--bodytext img:last-child {
+  width: 50px;
+  position: absolute;
+  right: -5px;
+}
+
+.detail___info--bodytext p {
+  line-height: 2;
+}
+
+.detail___info--bodytext p,
+.detail___info--bodytext h4 {
+  color: var(--bgColor);
+  margin-bottom: 2rem;
+}
+
+.detail___info--bodytext h4 {
+  display: flex;
+  align-items: center;
+}
+
+.input_container {
+  flex: 1;
+  height: 100%;
+}
