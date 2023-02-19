@@ -1,6 +1,5 @@
 /* ================== Google fonts ====================== */
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&display=swap');
 /* *================== Basic style ====================== */
 
 :root {
@@ -34,7 +33,7 @@ h4,
 h6,
 p {
   color: var(--textColor);
-  font-family: "Lato", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 h1 {
