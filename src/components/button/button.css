@@ -1,0 +1,22 @@
+button {
+  background-color: var(--primaryColor);
+  color: var(--bgColor);
+  border-radius: 6px;
+  width: 426px;
+  outline: none;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button > img {
+  position: absolute;
+  width: auto;
+  height: 2rem;
+  left: 3rem;
+}
