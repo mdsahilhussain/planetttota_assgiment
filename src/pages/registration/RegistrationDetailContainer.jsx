@@ -9,7 +9,7 @@ let squarePattern = <div></div>;
 
 function RegistrationDetailContainer() {
   return (
-    <section className="detai_container">
+    <section className="detai___container">
       <div className="detail___info">
         <img className="detail___info--logo" src={logoImage} alt="logoImage" />
         <div className="detail___info--body">

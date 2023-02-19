@@ -1,0 +1,53 @@
+.formInput,
+select {
+  display: flex;
+  flex-direction: column;
+  width: 426px;
+}
+
+.formInput > input,
+select {
+  padding: 1rem;
+  margin: 0.8rem 0rem;
+  border-radius: 5px;
+  border: 1px solid var(--textColor);
+}
+
+label {
+  font-size: 1rem;
+  color: var(--textColor);
+}
+
+.formInput span {
+  font-size: 12px;
+  padding: 3px;
+  color: red;
+  display: none;
+}
+
+.formInput > input:focus {
+  border: 1px solid var(--primaryColor) !important;
+  box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+}
+
+input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+input[type="checkbox"]:checked::after {
+  background-color: red;
+}
+
+input[type="checkbox"]:focus {
+  border: none;
+  box-shadow: none;
+}
+
+input:invalid[focused="true"] {
+  border: 1px solid red;
+}
+
+input:invalid[focused="true"] ~ span {
+  display: block;
+}

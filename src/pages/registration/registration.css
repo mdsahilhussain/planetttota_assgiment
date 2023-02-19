@@ -1,8 +1,9 @@
-.registration_container {
+.registration___container {
   display: flex;
   width: 100%;
   height: 100vh;
 }
+/* * style RegistrationDetailContainer */
 
 .detail {
   width: 40%;
@@ -12,10 +13,16 @@
   height: 100%;
 }
 
-.detai_container {
+.detai___container,
+.joinus___container,
+.form___container {
   width: 100%;
   height: 100%;
   background-color: #1566d8d0;
+}
+.joinus___container,
+.form___container {
+  background-color: var(--bgColor) !important;
 }
 .detail___info {
   width: 100%;
@@ -29,7 +36,9 @@
   height: auto;
 }
 
-.detail___info--body {
+.detail___info--body,
+.joinus___container--body,
+.form___container--body {
   width: 100%;
   height: 100%;
 
@@ -65,12 +74,69 @@
   margin-bottom: 2rem;
 }
 
-.detail___info--bodytext h4 {
+.detail___info--bodytext h4,
+.form___container--body h6 {
   display: flex;
   align-items: center;
 }
 
-.input_container {
+.form____container {
   flex: 1;
   height: 100%;
+}
+
+/* * Style RegistrationJoinUsContainer */
+.joinus___container--body {
+  height: 90%;
+}
+
+/* * Style RegistrationFromContainer */
+.form___container--body {
+  height: 90%;
+}
+
+.passwordInput > input {
+  border: none;
+}
+
+.form___container--body h6 input {
+  margin-right: 0.5rem;
+}
+.form___container--divider {
+  margin: 1.5rem 0;
+  width: 426px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form___container--divider hr {
+  opacity: 10%;
+  width: 100%;
+  background-color: var(--textColor);
+}
+
+.form___container--divider h6 {
+  margin: 0 1rem;
+}
+
+.form___container--phonenumber {
+  padding: 1rem;
+  margin: 0.8rem 0rem;
+  border-radius: 5px;
+  border: 1px solid var(--textColor);
+  width: 426px;
+}
+
+.PhoneInputInput {
+  border: none;
+}
+
+.PhoneInputInput:focus {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.PhoneInputCountr {
+  margin-right: 2rem;
 }
