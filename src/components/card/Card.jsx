@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 function Card(props) {
   return (
-    <div className="card___container">
-      <div className="card___container--icon">{/* <p>{props.icon}</p> */}</div>
+    <div className="card___container scale-up-center">
+      <div className="card___container--icon">{props.icon}</div>
       <div className="card___container--text">
         <h4>{props.title}</h4>
         <h6>{props.subTitle}</h6>

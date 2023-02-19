@@ -1,5 +1,5 @@
 .card___container {
-  width: fit-content;
+  width: auto;
   height: fit-content;
   display: flex;
   align-items: center;
@@ -15,9 +15,14 @@
   align-items: center;
   width: 3rem;
   height: 3rem;
-  background-color: transparent !important;
-  border: 1px solid var(--primaryColor);
+  background-color: #f5f9ff;
+  font-size: 1.5rem;
+  color: var(--primaryColor);
   clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.card___container--icon > p {
+  background-color: transparent;
 }
 
 .card___container--text {

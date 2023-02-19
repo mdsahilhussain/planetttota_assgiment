@@ -15,7 +15,7 @@ function RegistrationDetailContainer() {
         <div className="detail___info--body">
           {squarePattern}
           <div className="detail___info--bodytext">
-            <img src={topIcon} alt="topicon" />
+            <img src={topIcon} alt="topicon" className="jello-vertical" />
             <p>
               The passage experienced a surge in popularity during the 1960s
               when Letraset used it on their dry-transfer sheets, and again
@@ -37,7 +37,7 @@ function RegistrationDetailContainer() {
                 }}
               />
             </h4>
-            <img src={bootomIcon} alt="bottomicon" />
+            <img src={bootomIcon} alt="bottomicon" className="bounce-right" />
           </div>
         </div>
       </div>

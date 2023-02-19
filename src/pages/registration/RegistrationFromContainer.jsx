@@ -59,7 +59,7 @@ function RegistrationFromContainer() {
     ) {
       return alert("Hello\nPleace enter all value");
     }
-    navigator("/complete", { state: basicData }, { replace: true });
+    navigator("/residencyinfo", { state: basicData }, { replace: true });
   };
 
   return (
@@ -72,9 +72,10 @@ function RegistrationFromContainer() {
       <div className="form___container--body">
         <div>
           <h1>Register Individual Account!</h1>
-          <p style={{ marginTop: "1.5rem", marginBottom: "2rem" }}>
+          <p style={{ marginTop: "1.5rem" }}>
             For the purpose of industry regulation, your details are required.
           </p>
+          <hr style={{ margin: "1.5rem 0", opacity: "30%" }} />
           <form>
             {inputs.map((item, index) => (
               <InputField
@@ -97,7 +98,16 @@ function RegistrationFromContainer() {
             <hr />
           </div>
           <div>
-            <Button name="Register Account" style={{ marginTop: "0rem" }} />
+            <Button
+              name="Register with Google"
+              icon="googleIcon"
+              style={{
+                marginTop: "0rem",
+                backgroundColor: "white",
+                color: "black",
+                boxShadow: "0px 4px 14px 1px rgba(0, 0, 0, 0.04)",
+              }}
+            />
           </div>
         </div>
       </div>

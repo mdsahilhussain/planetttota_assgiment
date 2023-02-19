@@ -1,24 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, InputField, RegistertionNavbar } from "../../components";
-import { useNavigate } from "react-router-dom";
 
 function BusinessRegistration() {
-  let navigator = useNavigate();
-
   const [businessData, setBusinessData] = useState({
     bnv: "",
   });
 
+  const [randomBNV, setRandomBNV] = useState();
+
   const inputs = [
     {
       id: 1,
-      name: "name",
+      name: "bnv",
       type: "text",
-      placeholder: "Enter Your Fullname",
+      placeholder: "Enter Your BVN",
       errorMessage:
-        "Name should be 3-16 characters and shouldn't include any special character or number !",
+        "Name should be 12 characters and shouldn't include any special character or alphabet !",
       label: "Bank verification number (BVN)",
-      pattern: "[a-zA-Z][a-zA-Z ]{3,16}",
+      pattern: randomBNV,
       required: true,
     },
   ];
@@ -29,29 +28,40 @@ function BusinessRegistration() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (
-      businessData.name.trim() === "" &&
-      businessData.email.trim() === "" &&
-      businessData.password.trim() === ""
-    ) {
-      return alert("Hello\nPleace enter all value");
+
+    if (businessData.bnv.trim() === "") {
+      return alert("Hello\nPleace enter your env");
     }
-    navigator("/complete", { state: businessData }, { replace: true });
+    if (randomBNV !== businessData.bnv) {
+      return alert("NOT MATCH\nYour enterd Bank verification number not match");
+    }
+    console.log("env", businessData);
   };
+
+  const randomBNVGenrater = () => {
+    let randerNum = parseInt(Math.random().toFixed(12).replace("0.", ""));
+    setRandomBNV(randerNum);
+  };
+  useEffect(() => {
+    randomBNVGenrater();
+  }, []);
 
   return (
     <div className="form___container">
       <RegistertionNavbar
         url="/"
-        step="STEP 01/03"
-        statement="Personal Info."
+        step="STEP 01/01"
+        statement="Bank Verification"
       />
       <div className="form___container--body">
         <div>
-          <h1>Register Individual Account!</h1>
-          <p style={{ marginTop: "1.5rem", marginBottom: "2rem" }}>
+          <h6>Copy Your Bank verification number: {randomBNV}</h6>
+          <h1>Complete Your Profile!</h1>
+          <p style={{ marginTop: "1.5rem" }}>
             For the purpose of industry regulation, your details are required.
           </p>
+          <hr style={{ margin: "1.5rem 0", opacity: "30%" }} />
+
           <form>
             {inputs.map((item, index) => (
               <InputField
@@ -60,22 +70,13 @@ function BusinessRegistration() {
                 value={businessData[inputs.name]}
                 onChange={onChange}
                 index={index}
+                randomBNV={randomBNV}
               />
             ))}
           </form>
-          <h6>
-            <input type="checkbox" /> I agree to terms & conditions
-          </h6>
+
           <div onClick={handleSubmit}>
-            <Button name="Register Account" style={{ marginTop: "1.5rem" }} />
-          </div>
-          <div className="form___container--divider">
-            <hr />
-            <h6>or</h6>
-            <hr />
-          </div>
-          <div>
-            <Button name="Register Account" style={{ marginTop: "0rem" }} />
+            <Button name="Save & Continue" style={{ marginTop: "4rem" }} />
           </div>
         </div>
       </div>

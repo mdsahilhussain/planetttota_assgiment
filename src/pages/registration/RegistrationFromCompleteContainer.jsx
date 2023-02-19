@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import { Button, InputField, RegistertionNavbar } from "../../components";
 import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+
+import { MdLockOutline } from "react-icons/md";
+
 import "./registration.css";
+
 function RegistrationFromCompleteContainer() {
   const location = useLocation();
+  let navigator = useNavigate();
   const dataFromBasicInfo = location.state;
   const [profileData, setProfileData] = useState({
     address: "",
@@ -40,11 +47,13 @@ function RegistrationFromCompleteContainer() {
       ...profileData,
       phoneNumber: value,
     });
-    
+
     if (!completData) {
       return alert("Hello\nPleace enter all value");
+    } else {
+      navigator("/complete", { state: completData }, { replace: true });
     }
-    console.log("completData", completData);
+    // console.log("completData", completData);
   };
 
   const onChange = (e) => {
@@ -55,14 +64,16 @@ function RegistrationFromCompleteContainer() {
       <RegistertionNavbar
         url="/individual"
         step="STEP 02/03"
-        statement="Personal Info."
+        statement="Residency Info."
       />
       <div className="form___container--body">
         <div>
           <h1>Register Individual Account!</h1>
-          <p style={{ marginTop: "1.5rem", marginBottom: "2rem" }}>
+          <p style={{ marginTop: "1.5rem" }}>
             For the purpose of industry regulation, your details are required.
           </p>
+          <hr style={{ margin: "1.5rem 0", opacity: "30%" }} />
+
           <form>
             <label>{inputs[0].label}</label>
             <div className="form___container--phonenumber">
@@ -92,6 +103,12 @@ function RegistrationFromCompleteContainer() {
 
           <div onClick={handleSubmit}>
             <Button name="Register Account" style={{ marginTop: "1.5rem" }} />
+          </div>
+          <div className="form___container--footer">
+            <h6>
+              <MdLockOutline style={{ marginRight: "0.5rem" }} /> Your Info is
+              safely secured
+            </h6>
           </div>
         </div>
       </div>

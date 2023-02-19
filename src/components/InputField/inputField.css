@@ -5,12 +5,18 @@ select {
   width: 426px;
 }
 
-.formInput > input,
+.formInput input,
 select {
   padding: 1rem;
   margin: 0.8rem 0rem;
+  width: 426px;
   border-radius: 5px;
   border: 1px solid var(--textColor);
+}
+
+.formInput .inputFiled {
+  display: flex;
+  align-items: center;
 }
 
 label {
@@ -25,7 +31,11 @@ label {
   display: none;
 }
 
-.formInput > input:focus {
+.inputFiled > div {
+  display: none;
+}
+
+.formInput input:focus {
   border: 1px solid var(--primaryColor) !important;
   box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
 }
@@ -44,10 +54,14 @@ input[type="checkbox"]:focus {
   box-shadow: none;
 }
 
-input:invalid[focused="true"] {
+.formInput > input:invalid[focused="true"] {
   border: 1px solid red;
 }
 
-input:invalid[focused="true"] ~ span {
+.inputFiled > input:valid[focused="true"] ~ div {
+  display: block;
+}
+
+.formInput > input:invalid[focused="true"] ~ span {
   display: block;
 }
