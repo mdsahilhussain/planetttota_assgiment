@@ -28,7 +28,6 @@ function BusinessRegistration() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (businessData.bnv.trim() === "") {
       return alert("Hello\nPleace enter your env");
     }
@@ -55,7 +54,10 @@ function BusinessRegistration() {
       />
       <div className="form___container--body">
         <div>
-          <h6>Copy Your Bank verification number: {randomBNV}</h6>
+          <h6>
+            Enter Your Bank verification number: {randomBNV} (please don't copy
+            and paste)
+          </h6>
           <h1>Complete Your Profile!</h1>
           <p style={{ marginTop: "1.5rem" }}>
             For the purpose of industry regulation, your details are required.

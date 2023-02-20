@@ -49,7 +49,7 @@ function RegistrationFromCompleteContainer() {
     });
 
     if (!completData) {
-      return alert("Hello\nPleace enter all value");
+      return alert("Hello\nPleace check entered value");
     } else {
       navigator("/complete", { state: completData }, { replace: true });
     }
