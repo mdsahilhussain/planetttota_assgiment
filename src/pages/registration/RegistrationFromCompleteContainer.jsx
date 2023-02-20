@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Button, InputField, RegistertionNavbar } from "../../components";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import { getCountries } from "react-phone-number-input/input";
+import en from "react-phone-number-input/locale/en.json";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 
@@ -13,6 +14,10 @@ import "./registration.css";
 function RegistrationFromCompleteContainer() {
   const location = useLocation();
   let navigator = useNavigate();
+  // console.log("countries", getCountries());
+
+  // getCountries().map((country) => console.log(en[country]));
+
   const dataFromBasicInfo = location.state;
   const [profileData, setProfileData] = useState({
     address: "",
@@ -82,6 +87,7 @@ function RegistrationFromCompleteContainer() {
                 defaultCountry="IN"
                 value={value}
                 onChange={setValue}
+                className="scale-up-center"
               />
             </div>
 
@@ -93,11 +99,13 @@ function RegistrationFromCompleteContainer() {
             />
 
             <label>Country of residence</label>
-            <select name="country" id="cars" onChange={onChange}>
+            <select name="country" id="country" onChange={onChange}>
               <option value="">Please select</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
+              {getCountries().map((country) => (
+                <option key={country} value={en[country]}>
+                  {en[country]}
+                </option>
+              ))}
             </select>
           </form>
 
